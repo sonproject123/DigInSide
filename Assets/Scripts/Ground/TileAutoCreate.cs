@@ -1,25 +1,36 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class TileAutoCreate : MonoBehaviour {
-    [SerializeField] Tilemap tilemap; // 타일맵 컴포넌트
-    [SerializeField] TileBase tilePrefab; // 사용할 타일 프리팹
+    [SerializeField] GameObject topTile;
+    [SerializeField] List<GameObject> tiles = new List<GameObject>();
+    [SerializeField] int horizontal;
+    [SerializeField] int vertical;
+    [SerializeField] float spacing = 4.0f;
 
     private void Start() {
+        horizontal = 20;
         CreateTilemap();
     }
 
     private void CreateTilemap() {
-        // 타일맵의 크기 설정 (예: 10x10)
-        int width = 10;
-        int height = 10;
+        Vector2 startPosition = transform.position;
 
-        // 타일을 동적으로 추가
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                Vector3Int tilePosition = new Vector3Int(x, y, 0);
-                tilemap.SetTile(tilePosition, tilePrefab);
+        for (int i = 0; i < horizontal; i++) {
+            CreateTile(startPosition, i, topTile);
+        }
+
+        for (int t = 0; t < tiles.Count; t++) {
+            for (int i = 0; i < horizontal; i++) {
+                CreateTile(startPosition, i, tiles[t]);
             }
         }
+    }
+
+    private void CreateTile(Vector2 startPosition, int i, GameObject tile) {
+        Vector2 tilePosition = startPosition + new Vector2(i * spacing, 0);
+        GameObject clone = ResourcesManager.Instance.Instantiate(tile, transform);
+        clone.transform.position = tilePosition;
     }
 }
