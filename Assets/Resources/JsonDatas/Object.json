@@ -1,9 +1,19 @@
 {
   "objectsData": [
     {
+      "name": "TILE_UI",
+      "count": 100,
+      "code": "UIs/Tile UI"
+    },
+    {
       "name": "ARTIFACT",
       "count": 100,
       "code": "Objects/Artifact"
+    },
+    {
+      "name": "NORMAL_ATTACK1",
+      "count": 1,
+      "code": "Explosions/Normal Attack1"
     }
   ]
 }

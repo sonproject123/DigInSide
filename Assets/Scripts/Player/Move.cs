@@ -20,18 +20,14 @@ public class Move : MonoBehaviour {
     }
 
     private void DictionaryKey() {
-        keyActions_GetKey.Clear();
         keyActions_GetKey.Add(KeyCode.A, Left);
         keyActions_GetKey.Add(KeyCode.D, Right);
         keyActions_GetKey.Add(KeyCode.W, Up);
         keyActions_GetKey.Add(KeyCode.S, Down);
-
-        keyActions_GetKeyDown.Clear();
-        keyActions_GetKeyUp.Clear();
     }
 
     private void Update() {
-        if (!Input.anyKey) {
+        if (!Input.anyKey && !Input.GetMouseButton(0)) {
             Stats.Instance.IsMove = false;
             return;
         }
@@ -42,6 +38,9 @@ public class Move : MonoBehaviour {
         OnMove(keyActions_GetKeyDown, Input.GetKeyDown);
         OnMove(keyActions_GetKey, Input.GetKey);
         OnMove(keyActions_GetKeyUp, Input.GetKeyUp);
+
+        if (Input.GetMouseButtonDown(0))
+            DigOne();
     }
 
     private void OnMove(Dictionary<KeyCode, Action> keyActions, Func<KeyCode, bool> inputMethod) {
@@ -81,5 +80,10 @@ public class Move : MonoBehaviour {
         Vector2 dir = new Vector2(horizontalInput, verticalInput);
         if (RaycastCheck(dir))
             rb.MovePosition(rb.position + dir * Stats.Instance.Speed * Time.deltaTime);
+    }
+
+    private void DigOne() {
+        GameObject attack = ObjectManager.Instance.UseObject("NORMAL_ATTACK1");
+        attack.transform.position = GeneralManager.Instance.MouseLocation;
     }
 }
