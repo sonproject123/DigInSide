@@ -16,9 +16,10 @@ public class NormalAttack1 : Attack {
                 TileData tempTD;
                 TileManager.Instance.TileDictionary.TryGetValue(tile, out tempTD);
 
-                tempTD.hp -= 10;
+                tempTD.hp -= 5;
                 TileManager.Instance.TileDictionary[tile] = tempTD;
-                Debug.Log(TileManager.Instance.TileDictionary[tile].hp);
+                if (TileManager.Instance.TileDictionary[tile].hp <= 0)
+                    Destroy(tile);
             }
         }
 

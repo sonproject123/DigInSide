@@ -19,7 +19,8 @@ public abstract class Attack : MonoBehaviour {
     }
 
     private void OnEnable() {
-        tiles.Clear();
+        for (int i = 0; i < tiles.Count; i++)
+            tiles[i].Clear();
         StartCoroutine(TileAdd());
     }
 
@@ -28,12 +29,10 @@ public abstract class Attack : MonoBehaviour {
         yield return wffu;
 
         for (int i = 0; i < circleColliders.Count; i++) {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, circleColliders[i].radius);
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, circleColliders[i].radius);
             foreach (var hit in hitColliders) {
-        Debug.Log(hit.name);
-                if (hit.CompareTag("Tile")) {
+                if (hit.CompareTag("Tile"))
                     tiles[i].Add(hit.gameObject);
-                }
             }
         }
 
