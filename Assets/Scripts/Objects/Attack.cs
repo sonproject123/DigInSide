@@ -9,7 +9,6 @@ public abstract class Attack : MonoBehaviour {
     [SerializeField] protected Dictionary<int, List<GameObject>> tiles = new Dictionary<int, List<GameObject>>();
 
     protected abstract void ObjectName();
-    protected abstract void AttackProcess();
 
     protected void Awake() {
         for (int i = 0; i < circles.Count; i++) {
@@ -37,5 +36,18 @@ public abstract class Attack : MonoBehaviour {
         }
 
         AttackProcess();
+    }
+
+    protected void AttackProcess() {
+        for (int i = 0; i < tiles.Count; i++) {
+            foreach (var tile in tiles[i]) {
+                if (tile == null)
+                    continue;
+
+                TileManager.Instance.TileDamage(tile, 5);
+            }
+        }
+
+        ObjectManager.Instance.ReturnObject(gameObject, objectName);
     }
 }

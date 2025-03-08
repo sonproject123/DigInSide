@@ -25,7 +25,7 @@ public class PlayerCamera : MonoBehaviour {
     public static Action<float> OnDive;
 
     private void Start() {
-        player = Stats.Instance.PlayerCenter;
+        player = PlayerStats.Instance.PlayerCenter;
 
         OnCameraMove = (Vector3 targetPosition, float speed) => { CameraForcedMoveInit(targetPosition, speed); };
         OnIsCameraFollow = (bool state) => { IsCameraFollowPlayer(state); };

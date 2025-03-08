@@ -14,10 +14,10 @@ public class GeneralManager : Singleton<GeneralManager> {
     }
 
     private void Update() {
-        mousePosition = MousePosition();
+        mousePosition = MousePositionUpdate();
     }
 
-    private Vector3 MousePosition() {
+    private Vector3 MousePositionUpdate() {
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = Camera.main.nearClipPlane;
 
@@ -31,7 +31,7 @@ public class GeneralManager : Singleton<GeneralManager> {
 
     public bool Pause { get { return pause; } set { pause = value; } }
 
-    public Vector3 MouseLocation { get { return new Vector3(mousePosition.x, mousePosition.y, 0); } }
+    public Vector3 MousePosition { get { return new Vector3(mousePosition.x, mousePosition.y, 0); } }
 
     public WaitForFixedUpdate WFFU { get { return wffu; } }
 }

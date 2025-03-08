@@ -28,7 +28,7 @@ public class Move : MonoBehaviour {
 
     private void Update() {
         if (!Input.anyKey && !Input.GetMouseButton(0)) {
-            Stats.Instance.IsMove = false;
+            PlayerStats.Instance.IsMove = false;
             return;
         }
 
@@ -51,7 +51,7 @@ public class Move : MonoBehaviour {
     }
 
     private bool RaycastCheck(Vector3 dir) {
-        bool center = Physics.Raycast(Stats.Instance.PlayerCenter.position, dir, 0.3f, LayerMask.GetMask("Wall"));
+        bool center = Physics.Raycast(PlayerStats.Instance.PlayerCenter.position, dir, 0.3f, LayerMask.GetMask("Wall"));
 
         return !center;
     }
@@ -79,11 +79,11 @@ public class Move : MonoBehaviour {
     private void RigidMove() {
         Vector2 dir = new Vector2(horizontalInput, verticalInput);
         if (RaycastCheck(dir))
-            rb.MovePosition(rb.position + dir * Stats.Instance.Speed * Time.deltaTime);
+            rb.MovePosition(rb.position + dir * PlayerStats.Instance.Speed * Time.deltaTime);
     }
 
     private void DigOne() {
         GameObject attack = ObjectManager.Instance.UseObject("NORMAL_ATTACK1");
-        attack.transform.position = GeneralManager.Instance.MouseLocation;
+        attack.transform.position = GeneralManager.Instance.MousePosition;
     }
 }

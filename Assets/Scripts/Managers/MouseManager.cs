@@ -19,7 +19,7 @@ public class MouseManager : Singleton<MouseManager> {
     }
 
     private void CursorChange(Texture2D cursor) {
-        center = new Vector2(cursor.width / 2, cursor.height / 2);
+        center = new Vector2(cursor.width / 8, 0);
         Cursor.SetCursor(cursor, center, CursorMode.ForceSoftware);
     }
 

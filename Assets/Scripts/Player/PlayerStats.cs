@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Stats : Singleton<Stats> {
+public class PlayerStats : Singleton<PlayerStats> {
     [SerializeField] Transform player;
     [SerializeField] Transform playerCenter;
 
