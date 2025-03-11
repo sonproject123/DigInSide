@@ -14,6 +14,7 @@ public class PlayerStats : Singleton<PlayerStats> {
 
     [SerializeField] bool isMove;
     [SerializeField] bool isLeft;
+    [SerializeField] bool isDiggable;
 
     private void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -42,6 +43,10 @@ public class PlayerStats : Singleton<PlayerStats> {
         attack = 1;
         speed = 60;
         mass = 5;
+
+        isMove = false;
+        isLeft = false;
+        isDiggable = false;
     }
 
     private void Initialize() {
@@ -56,5 +61,6 @@ public class PlayerStats : Singleton<PlayerStats> {
     public float Mass{ get { return mass; } set { mass = value; } }
     public bool IsMove { get { return isMove; } set { isMove = value; } }
     public bool IsLeft{ get { return isLeft; } set { isLeft = value; } }
+    public bool IsDiggable { get { return isDiggable; } set { isDiggable = value; } }
     #endregion
 }

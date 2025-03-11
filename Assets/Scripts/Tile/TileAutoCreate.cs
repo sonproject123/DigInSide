@@ -19,26 +19,29 @@ public class TileAutoCreate : MonoBehaviour {
     private void CreateTilemap() {
         Vector2 startPosition = transform.position;
         int line = 0;
+        int y = 0;
 
-        for (int i = 0; i < horizontal; i++) 
-            CreateTile(startPosition, i, line, topTile);
+        for (int i = 0; i < horizontal; i++)
+            CreateTile(startPosition, i, line, i, y, topTile);
+        y--;
 
         for (int t = 0; t < tiles.Count; t++) {
             for (int v = 0; v < vertical; v++) {
                 for (int h = 0; h < horizontal; h++)
-                    CreateTile(startPosition, h, line, tiles[t]);
+                    CreateTile(startPosition, h, line, h, y, tiles[t]);
                 line--;
+                y--;
             }
             line++;
         }
     }
 
-    private void CreateTile(Vector2 startPosition, int h, int v, GameObject tile) {
+    private void CreateTile(Vector2 startPosition, int h, int v, int x, int y, GameObject tile) {
         Vector2 tilePosition = startPosition + new Vector2(h * spacing, v);
         GameObject clone = ResourcesManager.Instance.Instantiate(tile, transform);
         clone.transform.position = tilePosition;
 
-        TileData tileData = new TileData(10, 1);
+        TileData tileData = new TileData(10, 1, x, y);
 
         TileManager.Instance.TileDictionary.Add(clone, tileData);
     }

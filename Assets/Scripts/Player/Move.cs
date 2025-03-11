@@ -83,7 +83,9 @@ public class Move : MonoBehaviour {
     }
 
     private void DigOne() {
-        GameObject attack = ObjectManager.Instance.UseObject("NORMAL_ATTACK1");
-        attack.transform.position = GeneralManager.Instance.MousePosition;
+        if (PlayerStats.Instance.IsDiggable) {
+            GameObject attack = ObjectManager.Instance.UseObject("NORMAL_ATTACK1");
+            attack.transform.position = GeneralManager.Instance.MousePosition;
+        }
     }
 }
