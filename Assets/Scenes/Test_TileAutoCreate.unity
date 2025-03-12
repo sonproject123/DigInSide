@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 563867656}
   - component: {fileID: 563867657}
   - component: {fileID: 563867658}
+  - component: {fileID: 563867659}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -545,6 +546,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: 0
   verticalInput: 0
+--- !u!114 &563867659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563867653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d30f100082a77c4d86995a2ffb01ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &804945830
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +924,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1212830483}
   - component: {fileID: 1212830484}
-  - component: {fileID: 1212830485}
   m_Layer: 7
   m_Name: Dig Range
   m_TagString: Untagged
@@ -951,7 +963,7 @@ CircleCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 1
+  m_LayerOverridePriority: 10
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -969,19 +981,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1
---- !u!114 &1212830485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212830482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d30f100082a77c4d86995a2ffb01ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 1.25
 --- !u!1 &1269187259
 GameObject:
   m_ObjectHideFlags: 0
