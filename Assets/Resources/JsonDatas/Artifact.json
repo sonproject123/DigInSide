@@ -1,0 +1,109 @@
+{
+  "artifactsData": [
+    {
+      "id": 1,
+      "name": "연금의 돌",
+      "description": "획득 골드량 증가 강화 가능",
+      "flavorText": "돌 보기를 황금같이 하라.",
+      "tier": 1
+    },
+    {
+      "id": 2,
+      "name": "간이 숫돌",
+      "description": "삽 파괴력 증가 강화 가능",
+      "flavorText": "휴대성을 극대화시킨 숫돌. 어디서든 연마하세요.",
+      "tier": 1
+    },
+    {
+      "id": 3,
+      "name": "기계화 팔뚝",
+      "description": "삽 재사용 대기시간 감소 강화 가능",
+      "flavorText": "당신의 혹사를 도와드립니다.",
+      "tier": 1
+    },
+    {
+      "id": 4,
+      "name": "충격파 발생기",
+      "description": "삽 채굴 범위 증가 강화 가능",
+      "flavorText": "이 시대의 이름은 흰삽이다.",
+      "tier": 1
+    },
+    {
+      "id": 5,
+      "name": "티타늄 판떼기",
+      "description": "삽 내구도 증가 강화 가능",
+      "flavorText": "대충 붙여두면 알아서 작동합니다.",
+      "tier": 1
+    },
+    {
+      "id": 5,
+      "name": "불발탄",
+      "description": "상점에서 폭발물 구매 가능",
+      "flavorText": "이걸 삽으로 쳤다고요?",
+      "tier": 2
+    },
+    {
+      "id": 5,
+      "name": "니트로 익스플로세린",
+      "description": "폭발물 위력 증가 강화 가능",
+      "flavorText": "내 손안의 작은 TNT",
+      "tier": 2
+    },
+    {
+      "id": 5,
+      "name": "로망의 설계도",
+      "description": "폭발물 범위 증가 강화 가능",
+      "flavorText": "거대 폭탄의 꿈은 끝나지 않는다.",
+      "tier": 2
+    },
+    {
+      "id": 5,
+      "name": "봄버벨트",
+      "description": "폭발물 최대 소지 수 증가 강화 가능",
+      "flavorText": "그 많은 폭탄은 어디서 났을까?",
+      "tier": 2
+    },
+    {
+      "id": 5,
+      "name": "거푸집",
+      "description": "폭발물 가격 감소 강화 가능",
+      "flavorText": "폭탄양산공장장이",
+      "tier": 2
+    },
+    {
+      "id": 5,
+      "name": "순간이동 장치 - 상점",
+      "description": "상점 순간이동 장치 사용 가능",
+      "flavorText": "초강화 귀환.",
+      "tier": 3
+    },
+    {
+      "id": 5,
+      "name": "순간이동 장치 - 신호기",
+      "description": "신호 순간이동 장치 사용 가능",
+      "flavorText": "어디로든 장치!",
+      "tier": 3
+    },
+    {
+      "id": 10,
+      "name": "광산 채굴권",
+      "description": "광산 이용 가능",
+      "flavorText": "세상에 어느 광산 소유권을 앞마당에서 파낸 문서로 얻을 수 있는거죠?",
+      "tier": 2
+    },
+    {
+      "id": 10,
+      "name": "나선형 파편",
+      "description": "상점에서 삽을 드릴로 업그레이드 가능",
+      "flavorText": "아뇨. 하늘을 뚫지도 않고 황금장방형도 아닙니다.",
+      "tier": 3
+    },
+    {
+      "id": 10,
+      "name": "위성 신호기",
+      "description": "상점에서 자동삽을 위성포로 업그레이드 가능",
+      "flavorText": "요격용 레이저 포를 이제 당신의 앞마당을 파는데 사용할 수 있습니다.",
+      "tier": 4
+    }
+  ]
+}

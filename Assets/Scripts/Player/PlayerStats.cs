@@ -16,6 +16,8 @@ public class PlayerStats : Singleton<PlayerStats> {
     [SerializeField] bool isLeft;
     [SerializeField] bool isDiggable;
 
+    [SerializeField] GameObject nearThing;
+
     private void OnEnable() {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -62,5 +64,6 @@ public class PlayerStats : Singleton<PlayerStats> {
     public bool IsMove { get { return isMove; } set { isMove = value; } }
     public bool IsLeft{ get { return isLeft; } set { isLeft = value; } }
     public bool IsDiggable { get { return isDiggable; } set { isDiggable = value; } }
+    public GameObject NearThing { get { return nearThing; } set { nearThing = value; } }
     #endregion
 }

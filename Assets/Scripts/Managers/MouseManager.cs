@@ -20,17 +20,8 @@ public class MouseManager : Singleton<MouseManager> {
         base.Awake();
         cursorDictionary.Add(Cursors.NORMAL, cursorNormal);
         cursorDictionary.Add(Cursors.DIG, cursorDig);
-    }
 
-    private void OnEnable() {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    public void State(int state) {
-        if (state == 0)
-            CursorChange(cursorNormal);
-        else
-            CursorChange(cursorNormal);
+        CursorChange(cursorNormal);
     }
 
     public void CursorNameChange(Cursors cursor) {
@@ -42,13 +33,5 @@ public class MouseManager : Singleton<MouseManager> {
         center = new Vector2(cursor.width / 2, cursor.height / 2);
         //center = new Vector2(cursor.width / 8, 0);
         Cursor.SetCursor(cursor, center, CursorMode.ForceSoftware);
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode) {
-        State(scene.buildIndex);
-    }
-
-    private void OnDisable() {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

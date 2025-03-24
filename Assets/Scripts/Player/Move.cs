@@ -24,6 +24,8 @@ public class Move : MonoBehaviour {
         keyActions_GetKey.Add(KeyCode.D, Right);
         keyActions_GetKey.Add(KeyCode.W, Up);
         keyActions_GetKey.Add(KeyCode.S, Down);
+
+        keyActions_GetKeyDown.Add(KeyCode.E, Gain);
     }
 
     private void Update() {
@@ -81,6 +83,10 @@ public class Move : MonoBehaviour {
         if (RaycastCheck(dir))
             rb.MovePosition(rb.position + dir * PlayerStats.Instance.Speed * Time.deltaTime);
     }
+    private void Gain() {
+        if (PlayerStats.Instance.NearThing != null)
+            Debug.Log(PlayerStats.Instance.NearThing.name + " Gain");
+    }
 
     private void DigOne() {
         if (PlayerStats.Instance.IsDiggable) {
@@ -88,4 +94,5 @@ public class Move : MonoBehaviour {
             attack.transform.position = GeneralManager.Instance.MousePosition;
         }
     }
+
 }
