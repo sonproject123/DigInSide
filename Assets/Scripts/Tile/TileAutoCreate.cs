@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -6,13 +7,14 @@ using UnityEngine.Tilemaps;
 public class TileAutoCreate : MonoBehaviour {
     [SerializeField] GameObject topTile;
     [SerializeField] List<GameObject> tiles = new List<GameObject>();
+
     [SerializeField] int horizontal;
     [SerializeField] int vertical;
     [SerializeField] float spacing = 4.0f;
 
     private void Start() {
         horizontal = 30;
-        vertical = 10;
+        vertical = 20;
         CreateTilemap();
     }
 

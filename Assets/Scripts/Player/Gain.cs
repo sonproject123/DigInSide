@@ -6,7 +6,7 @@ public class Gain : MonoBehaviour {
             PlayerStats.Instance.NearThing = collision.gameObject;
             GameObject keyE = KeyImageManager.Instance.KeyImageDict[KeyImage.E];
             keyE.SetActive(true);
-            keyE.transform.position = collision.transform.position + new Vector3(0, 0.75f, 0);
+            keyE.transform.position = collision.transform.position + new Vector3(0, 0.75f, -5);
         }
     }
 
