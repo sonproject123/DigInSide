@@ -26,17 +26,26 @@ public struct TileUIComponent {
 }
 
 public class TileManager : Singleton<TileManager> {
-    private Dictionary<GameObject, TileData> tiles = new Dictionary<GameObject, TileData>();
-    private Dictionary<GameObject, GameObject> tileUIs = new Dictionary<GameObject, GameObject>();
-    private Dictionary<GameObject, TileUIComponent> tileUIComponents = new Dictionary<GameObject, TileUIComponent>();
-    
+    float leftX, rightX, midY;
+    List<int> tierY = new List<int>();
+
+    Dictionary<GameObject, TileData> tiles = new Dictionary<GameObject, TileData>();
+    Dictionary<GameObject, GameObject> tileUIs = new Dictionary<GameObject, GameObject>();
+    Dictionary<GameObject, TileUIComponent> tileUIComponents = new Dictionary<GameObject, TileUIComponent>();
+
+    private new void Awake() {
+        base.Awake();
+        leftX = -7.5f;
+        midY = 3.5f;
+    }
+
     public void TileDamage(GameObject tile, float damage) {
         tiles.TryGetValue(tile, out TileData tileData);
         GameObject tileUI = null;
 
         if (!tileUIs.TryGetValue(tile, out tileUI)) {
             tileUI = ObjectManager.Instance.UseObject("TILE_UI");
-            tileUI.transform.position = new Vector2(tileData.x - 7.5f, tileData.y + 3.5f);
+            tileUI.transform.position = new Vector2(tileData.x + leftX, tileData.y + midY);
             Transform tileUICanvas = tileUI.transform.Find("Canvas");
 
             TileUIComponent tileUIComponentTemp;
@@ -65,5 +74,9 @@ public class TileManager : Singleton<TileManager> {
         }
     }
 
+    public float LeftX { get { return leftX; } set { leftX = value; } }
+    public float RightX { get { return rightX; } set { rightX = value; } }
+    public float MidY { get { return midY; } set { midY = value; } }
+    public List<int> TierY { get { return tierY; } set { tierY = value; } }
     public Dictionary<GameObject, TileData> TileDictionary { get { return tiles; } set { tiles = value; } }
 }

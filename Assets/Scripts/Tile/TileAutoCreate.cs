@@ -10,12 +10,16 @@ public class TileAutoCreate : MonoBehaviour {
 
     [SerializeField] int horizontal;
     [SerializeField] int vertical;
-    [SerializeField] float spacing = 4.0f;
+    [SerializeField] float spacing;
 
     private void Start() {
         horizontal = 30;
         vertical = 20;
+        spacing = 1.0f;
+
+        TileManager.Instance.RightX = horizontal + TileManager.Instance.LeftX - 1;
         CreateTilemap();
+        ArtifactBurial();
     }
 
     private void CreateTilemap() {
@@ -28,13 +32,13 @@ public class TileAutoCreate : MonoBehaviour {
         y--;
 
         for (int t = 0; t < tiles.Count; t++) {
+            TileManager.Instance.TierY.Add(y);
             for (int v = 0; v < vertical; v++) {
                 for (int h = 0; h < horizontal; h++)
                     CreateTile(startPosition, h, line, h, y, tiles[t]);
                 line--;
                 y--;
             }
-            line++;
         }
     }
 
@@ -46,5 +50,17 @@ public class TileAutoCreate : MonoBehaviour {
         TileData tileData = new TileData(10, 1, x, y);
 
         TileManager.Instance.TileDictionary.Add(clone, tileData);
+    }
+
+    private void ArtifactBurial() {
+        foreach (int y in TileManager.Instance.TierY) {
+            GameObject obj = ObjectManager.Instance.UseObject("ARTIFACT");
+            obj.SetActive(true);
+            obj.transform.position = new Vector3(TileManager.Instance.LeftX, y + TileManager.Instance.MidY, 0);
+
+            obj = ObjectManager.Instance.UseObject("ARTIFACT");
+            obj.SetActive(true);
+            obj.transform.position = new Vector3(TileManager.Instance.RightX, y + TileManager.Instance.MidY, 0);
+        }
     }
 }
