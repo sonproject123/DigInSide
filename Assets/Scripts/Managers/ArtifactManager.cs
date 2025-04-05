@@ -35,4 +35,6 @@ public class ArtifactManager : Singleton<ArtifactManager> {
             obj.SetActive(false);
         }
     }
+
+    public Dictionary<GameObject, ArtifactDataStruct> Artifacts { get { return artifacts; } }
 }

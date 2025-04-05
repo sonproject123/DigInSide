@@ -40,6 +40,8 @@ public class TileAutoCreate : MonoBehaviour {
                 y--;
             }
         }
+
+        TileManager.Instance.TierY.Add(y);
     }
 
     private void CreateTile(Vector2 startPosition, int h, int v, int x, int y, GameObject tile) {
@@ -53,14 +55,17 @@ public class TileAutoCreate : MonoBehaviour {
     }
 
     private void ArtifactBurial() {
-        foreach (int y in TileManager.Instance.TierY) {
-            GameObject obj = ObjectManager.Instance.UseObject("ARTIFACT");
-            obj.SetActive(true);
-            obj.transform.position = new Vector3(TileManager.Instance.LeftX, y + TileManager.Instance.MidY, 0);
+        foreach (var artifact in ArtifactManager.Instance.Artifacts) {
+            float minX = TileManager.Instance.LeftX;
+            float maxX = TileManager.Instance.RightX;
+            float minY = TileManager.Instance.TierY[artifact.Value.data.tier - 1];
+            float maxY = TileManager.Instance.TierY[artifact.Value.data.tier] + 1;
 
-            obj = ObjectManager.Instance.UseObject("ARTIFACT");
-            obj.SetActive(true);
-            obj.transform.position = new Vector3(TileManager.Instance.RightX, y + TileManager.Instance.MidY, 0);
+            float x = minX + UnityEngine.Random.Range(0, (int)(maxX - minX + 1));
+            float y = minY + UnityEngine.Random.Range(0, (int)(maxY - minY + 1));
+
+            artifact.Key.transform.position = new Vector2(x, y + 0.5f);
+            artifact.Key.SetActive(true);
         }
     }
 }
