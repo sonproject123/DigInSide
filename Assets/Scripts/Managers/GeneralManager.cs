@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GeneralManager : Singleton<GeneralManager> {
     [SerializeField] bool pause = false;
@@ -9,12 +10,28 @@ public class GeneralManager : Singleton<GeneralManager> {
     [SerializeField] Vector3 mousePosition;
     [SerializeField] WaitForFixedUpdate wffu = new WaitForFixedUpdate();
 
+    private void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable() {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void Start() {
         originalFixedTime = Time.fixedDeltaTime;
     }
 
     private void Update() {
         mousePosition = MousePositionUpdate();
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode) {
+        if (scene.buildIndex == 0) {
+            pause = false;
+            LetterBoxManager.Instance.LetterBox(false);
+            ObjectManager.Instance.AllReturn();
+        }
     }
 
     private Vector3 MousePositionUpdate() {

@@ -1,123 +1,140 @@
 {
   "artifactsData": [
     {
-      "id": 1,
+      "id": 10001,
       "name": "연금의 돌",
       "description": "획득 골드량 증가 강화 가능",
       "flavorText": "돌 보기를 황금같이 하라.",
+      "skillCode": "GoldPlus",
       "tier": 1
     },
     {
-      "id": 2,
+      "id": 10002,
       "name": "간이 숫돌",
       "description": "삽 파괴력 증가 강화 가능",
       "flavorText": "휴대성을 극대화시킨 숫돌. 어디서든 연마하세요.",
+      "skillCode": "AttackPlus",
       "tier": 1
     },
     {
-      "id": 3,
+      "id": 10003,
       "name": "기계화 팔뚝",
       "description": "삽 재사용 대기시간 감소 강화 가능",
       "flavorText": "당신의 혹사를 도와드립니다.",
+      "skillCode": "CooldownPlus",
       "tier": 1
     },
     {
-      "id": 4,
+      "id": 10004,
       "name": "충격파 발생기",
       "description": "삽 채굴 범위 증가 강화 가능",
       "flavorText": "이 시대의 이름은 흰삽이다.",
+      "skillCode": "RangePlus",
       "tier": 1
     },
     {
-      "id": 5,
+      "id": 10005,
       "name": "티타늄 판떼기",
       "description": "삽 내구도 증가 강화 가능",
       "flavorText": "대충 붙여두면 알아서 작동합니다.",
+      "skillCode": "DurabilityPlus",
       "tier": 1
     },
     {
-      "id": 6,
+      "id": 20001,
       "name": "불발탄",
       "description": "상점에서 폭발물 구매 가능",
       "flavorText": "이걸 삽으로 쳤다고요?",
+      "skillCode": "Common1LvSkills",
       "tier": 2
     },
     {
-      "id": 7,
+      "id": 20002,
       "name": "니트로 익스플로세린",
       "description": "폭발물 위력 증가 강화 가능",
       "flavorText": "내 손안의 작은 TNT",
+      "skillCode": "BombAttackPlus",
       "tier": 2
     },
     {
-      "id": 8,
+      "id": 20003,
       "name": "로망의 설계도",
       "description": "폭발물 범위 증가 강화 가능",
       "flavorText": "거대 폭탄의 꿈은 끝나지 않는다.",
+      "skillCode": "BombRangePlus",
       "tier": 2
     },
     {
-      "id": 9,
+      "id": 20004,
       "name": "봄버벨트",
       "description": "폭발물 최대 소지 수 증가 강화 가능",
       "flavorText": "그 많은 폭탄은 어디서 났을까?",
+      "skillCode": "BombCarryPlus",
       "tier": 2
     },
     {
-      "id": 10,
+      "id": 20005,
       "name": "거푸집",
       "description": "폭발물 가격 감소 강화 가능",
       "flavorText": "폭탄양산공장장이",
+      "skillCode": "BombPricePlus",
       "tier": 2
     },
     {
-      "id": 11,
+      "id": 30001,
       "name": "순간이동 장치 - 상점",
       "description": "상점 순간이동 장치 사용 가능",
       "flavorText": "초강화 귀환.",
+      "skillCode": "Common1LvSkills",
       "tier": 3
     },
     {
-      "id": 12,
+      "id": 30002,
       "name": "순간이동 장치 - 신호기",
       "description": "신호 순간이동 장치 사용 가능",
       "flavorText": "어디로든 장치!",
+      "skillCode": "Common1LvSkills",
       "tier": 3
     },
     {
-      "id": 13,
+      "id": 20006,
       "name": "광산 채굴권",
       "description": "광산 이용 가능",
       "flavorText": "세상에 어느 광산 소유권을 앞마당에서 파낸 문서로 얻을 수 있는거죠?",
+      "skillCode": "Common1LvSkills",
       "tier": 2
     },
     {
-      "id": 14,
+      "id": 30003,
       "name": "나선형 파편",
       "description": "상점에서 삽을 드릴로 업그레이드 가능",
       "flavorText": "아뇨. 하늘을 뚫지도 않고 황금장방형도 아닙니다.",
+      "skillCode": "Common1LvSkills",
       "tier": 3
     },
     {
-      "id": 15,
+      "id": 40001,
       "name": "위성 신호기",
       "description": "상점에서 자동삽을 위성포로 업그레이드 가능",
       "flavorText": "국가 방위를 위해 제작된 군사용 요격 레이저 포를 이제 당신의 앞마당을 파는데 사용할 수 있습니다.",
+      "skillCode": "Common1LvSkills",
       "tier": 4
     },
     {
-      "id": 16,
+      "id": 10006,
       "name": "롤러 브레이드",
       "description": "이동 속도 강화 가능",
       "flavorText": "집 전주인은 이거 찾으려고 애를 좀 먹었겠습니다.",
+      "skillCode": "MoveSpeedPlus",
       "tier": 1
     },
     {
-      "id": 17,
-      "name": "갈고리 신발",
-      "description": "언제나 땅을 밟게 됨",
-      "flavorText": "떨어지는 것 조차 귀찮은 사람들을 위한 혁신적인 발명품.",
-      "tier": 2
+      "id": 30004,
+      "name": "파동 충격기",
+      "description": "일정 시간마다 내 주변의 땅에게 피해를 입히게 됨",
+      "flavorText": "",
+      "skillCode": "Common1LvSkills",
+      "tier": 3
     }
   ]
 }

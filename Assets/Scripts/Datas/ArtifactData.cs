@@ -8,6 +8,7 @@ public class ArtifactData {
     public string name;
     public string description;
     public string flavorText;
+    public string skillCode;
     public int tier;
 }
 
