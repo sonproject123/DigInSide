@@ -21,6 +21,8 @@ public class PlayerStats : Singleton<PlayerStats> {
     [SerializeField] bool isLeft;
     [SerializeField] bool isDiggable;
 
+    [SerializeField] bool Drill;
+
     [SerializeField] GameObject nearThing;
 
     private void OnEnable() {
@@ -42,7 +44,7 @@ public class PlayerStats : Singleton<PlayerStats> {
 
     public void InitializedStats() {
         attack = 1;
-        speed = 30;
+        speed = 15;
         goldGain = 1;
         cooldown = 2;
         attackObject = attackObjectCodes[0];

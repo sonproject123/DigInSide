@@ -135,6 +135,14 @@
       "flavorText": "",
       "skillCode": "Common1LvSkills",
       "tier": 3
+    },
+    {
+      "id": 20007,
+      "name": "귀금속 탐지기",
+      "description": "주변 유물 표시",
+      "flavorText": "귀금속 탐지기지만 보물은 탐지할 수 없습니다.",
+      "skillCode": "Common1LvSkills",
+      "tier": 2
     }
   ]
 }

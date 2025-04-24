@@ -49,7 +49,7 @@ public class TileAutoCreate : MonoBehaviour {
         GameObject clone = ResourcesManager.Instance.Instantiate(tile, transform);
         clone.transform.position = tilePosition;
 
-        TileData tileData = new TileData(10, 1, x, y);
+        TileData tileData = new TileData(2, 1, x, y);
 
         TileManager.Instance.TileDictionary.Add(clone, tileData);
     }

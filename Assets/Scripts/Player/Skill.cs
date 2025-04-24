@@ -80,10 +80,10 @@ public static class Skill {
 
     private static void MoveSpeedPlus(int id) {
         int maxLevel = 5;
-        float[] values = { 1, 1.5f, 2, 2.5f, 3, 5 };
+        float[] values = { 15, 22.5f, 30, 45, 60, 75 };
 
         CommonSkillLevelUp(id, maxLevel);
-        PlayerStats.Instance.GoldGain = values[PlayerStats.Instance.SkillLevels[id]];
+        PlayerStats.Instance.Speed = values[PlayerStats.Instance.SkillLevels[id]];
     }
 
     private static void BombAttackPlus(int id) {
@@ -118,12 +118,3 @@ public static class Skill {
         PlayerStats.Instance.GoldGain = values[PlayerStats.Instance.SkillLevels[id]];
     }
 }
-
-/*
-아티팩트 획득
-Artifact Gain 발동
--> Dictionary에 따라 SkillGain 효과 발동(skill id == artifact id)
-SkillGain 효과 발동 시 SkillLevel 증가
-
-ps. 아티팩트 같은 곳에 겹쳐서 스폰되는 것 수정
-*/

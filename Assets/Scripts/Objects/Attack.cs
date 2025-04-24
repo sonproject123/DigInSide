@@ -44,7 +44,7 @@ public abstract class Attack : MonoBehaviour {
                 if (tile == null)
                     continue;
 
-                TileManager.Instance.TileDamage(tile, 5);
+                TileManager.Instance.TileDamage(tile, PlayerStats.Instance.Attack);
             }
         }
 

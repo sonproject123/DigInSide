@@ -43,6 +43,9 @@ public class Move : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0))
             DigOne();
+
+        if (Input.GetMouseButton(0))
+            DigContinue();
     }
 
     private void OnMove(Dictionary<KeyCode, Action> keyActions, Func<KeyCode, bool> inputMethod) {
@@ -84,15 +87,25 @@ public class Move : MonoBehaviour {
             rb.MovePosition(rb.position + dir * PlayerStats.Instance.Speed * Time.deltaTime);
     }
     private void Gain() {
-        if (PlayerStats.Instance.NearThing != null)
-            Debug.Log(PlayerStats.Instance.NearThing.name + " Gain");
+        if (PlayerStats.Instance.NearThing != null) {
+            ArtifactDataStruct artifactData = ArtifactManager.Instance.Artifacts[PlayerStats.Instance.NearThing];
+            Skill.SkillLevelUp(artifactData.id);
+            Debug.Log(artifactData.data.name);
+
+            Destroy(PlayerStats.Instance.NearThing);
+            PlayerStats.Instance.NearThing = null;
+        }
     }
 
     private void DigOne() {
         if (PlayerStats.Instance.IsDiggable) {
-            GameObject attack = ObjectManager.Instance.UseObject("NORMAL_ATTACK1");
+            GameObject attack = ObjectManager.Instance.UseObject(PlayerStats.Instance.AttackObject);
             attack.transform.position = GeneralManager.Instance.MousePosition;
         }
     }
 
+    private void DigContinue() {
+        if (false)
+            DigOne();
+    }
 }
